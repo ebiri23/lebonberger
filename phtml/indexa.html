@@ -1,0 +1,695 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900&display=swap"
+        rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+
+    <title>Jesus Christ The Good Shepherd Tabernacle</title>
+
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/templatemo-breezed.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/owl-carousel.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/lightbox.css' %}">
+
+</head>
+
+<body>
+
+
+    <div id="preloader">
+        <div class="jumper">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+
+
+
+    <header class="header-area header-sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+
+                        <a class="logo">
+                            {% if user.is_authenticated %}
+                            <div style="display: inline-block;"><h1 style="display: inline-block;">&#9786;</h1><h3 style="display: inline-block;">{{user.username}}</h3></div>
+                            {% else %}
+                            <p>Jesus Christ The Good Shepherd Tabernacle</p>
+                            {% endif %}
+
+                            <ul class="nav">
+
+                                <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
+                                <li class="scroll-to-section"><a href="#about">About</a></li>
+                                {% if user.is_authenticated %}
+                                <li class="scroll-to-section"><a href="#projects">Bible</a></li>
+                                {% else %}
+                                <li class="scroll-to-section"><a onclick="alert('You must sign in.')"
+                                        style="cursor: pointer;">Bible</a></li>
+                                {% endif %}
+                            
+                                <li class="submenu">
+                                    <a href="#features">Meetings</a>
+                                    <ul>
+                                        <li><a href="#features1">English</a></li>
+                                        <li><a href="#features2">Français (Après-Midi)</a></li>
+                                        <li><a href="#features3">Français (Nuit)</a></li>
+                                        <li><a href="#subscribe">Special Events</a></li>
+                                    </ul>
+                                </li>
+                        
+
+                                {% if user.is_authenticated %}
+                                <li><a href="/reqchat">Fellowship</a></li>
+                                {% else %}
+                                <li><a onclick="alert('You must Sign in.')" style="cursor: pointer;">Fellowship</a></li>
+                                {% endif %}
+                                </li>
+
+                                {% if user.is_authenticated %}
+                                <li><a href="/signout"
+                                        style="background-color: rgb(189, 179, 187); border: 1px black solid; border-radius: 5px; padding: 0px 5px;">Sign
+                                        out</a></li>
+                                {% else %}
+                                <li><a href="/signin"
+                                        style="background-color: rgb(0, 153, 255); padding: 5px; border: 1px black solid; border-radius: 5px; padding: 0px 5px;">Sign
+                                        in</a></li>
+                                {% endif %}
+
+                            </ul>
+                            <a href="/"> <p style="color: rgb(2, 2, 2); cursor: pointer; text-align: right;">FRANÇAIS</p></a>
+
+                            <a class='menu-trigger'>
+                                <span>Menu</span>
+                            </a>
+
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div id="search">
+        <button type="button" class="close">×</button>
+        <form id="contact" action="#" method="get">
+            <fieldset>
+                <input type="search" name="q" placeholder="SEARCH KEYWORD(s)" aria-label="Search through site content">
+            </fieldset>
+            <fieldset>
+                <button type="submit" class="main-button">Search</button>
+            </fieldset>
+        </form>
+    </div>
+
+
+    <div class="main-banner header-text" id="top">
+        <div class="Modern-Slider">
+
+            <div class="item">
+                <div class="img-fill">
+                    <img src="{% static 'images/slide-01.jpg' %}" alt="">
+                    <div class="text-content">
+                        <h3>Welcome To: </h3>
+                        <h5 style="background-color: aqua; border-radius: 30px;">Jesus Christ The Good Shepherd Tabernacle</h5>
+                        <a href="#about" class="main-stroked-button">Learn More</a>
+                        
+                    </div>
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="img-fill">
+                    <img src="{% static 'images/slide-02.jpg' %}" alt="">
+                    <div class="text-content">
+                        <h3>We help those in need.</h3>
+                        <h5>We believe in the prayer and healing of sickness.</h5>
+                        <a href="/reqchat" class="main-filled-button">See Testimonies</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="img-fill">
+                    <img src="{% static 'images/slide-03.jpg' %}" alt="">
+                    <div class="text-content">
+                        <h3>To be the son of God you must have the Holy Spirit.</h3>
+                        <h5>To have the Holy Spirit you must applied Act2:38.</h5>
+                        <a href="#contact-us" class="main-stroked-button">Contact us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="scroll-down scroll-to-section"><a href="#about"><i class="fa fa-arrow-down"></i></a></div>
+
+    <section class="section" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-xs-12">
+                    <div class="left-text-content">
+                        <div class="section-heading">
+                            <h6>About Us</h6>
+                            <h2>We support other ministries worldwide and our activities consist of:</h2>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6">
+                                <div class="service-item">
+                                    <img src="{% static 'images/contact-info-03.png' %}" alt="">
+                                    <h4>Word of wisdom</h4>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6">
+                                <div class="service-item">
+                                    <img src="{% static 'images/contact-info-03.png' %}" alt="">
+                                    <h4>Prophecy</h4>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6">
+                                <div class="service-item">
+                                    <img src="{% static 'images/contact-info-03.png' %}" alt="">
+                                    <h4>Prayer and Fasting</h4>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6">
+                                <div class="service-item">
+                                    <img src="{% static 'images/contact-info-03.png' %}" alt="">
+                                    <h4>Fellowship</h4>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <a href="#contact-us" class="main-button-icon">
+                                    Contact us<i class="fa fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-xs-12">
+                    <div class="right-text-content">
+                        <p><a href="indexa" style="background-color: aquamarine; padding: 5px; border-radius: 20px;">Jesus Christ The Good Shepherd Tabernacle</a> is a Christian organization. We have started our activities worldwide in the second decade of the twenty-first century. Since that time, we have experienced the power that is in the name of Jesus Christ.
+                            <br><br>Even before the era of Covid-19. Our organization opens the door for those who want to pray online in group. These activities start in the year 2017 with people all over the world.
+                            <br><br>Hosea 4:6, when you have ministries with experience it is a blessing. <a
+                                rel="nofollow noopener" href="#contact-us" target="_parent">Talk to
+                                us</a> if you have anything.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="features">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12"
+                    data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
+                    <div class="features-item">
+                        <div class="features-icon">
+                            <img src="{% static 'images/contact-info-03.png' %}" alt="">
+                        </div>
+                        <div class="features-content" id="features1">
+                            <h4>English</h4>
+                            <p>Our meetings in Zoom. When it is 15:00 (GMT-4) Montreal, Quebec, Canada</p>
+                            <a href="#" class="text-button-icon">
+                                Click here <i class="fa fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12"
+                    data-scroll-reveal="enter bottom move 30px over 0.6s after 0.4s">
+                    <div class="features-item" id="features2">
+                        <div class="features-icon">
+                            <img src="{% static 'images/contact-info-03.png' %}" alt="">
+                        </div>
+                        <div class="features-content">
+                            <h4>Français (Après-Midi)</h4>
+                            <p>Notre réunion sur Zoom. Lorsqu'il est 17:00 (GMT-4) Montreal, Quebec, Canada</p>
+                            <a href="https://us02web.zoom.us/j/7491822082?pwd=dDAvTnFUL1JYRndqeTgyci80T1BJUT09
+                            " class="text-button-icon">
+                                Cliquez Ici <i class="fa fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12"
+                    data-scroll-reveal="enter right move 30px over 0.6s after 0.4s">
+                    <div class="features-item" id="features3">
+                        <div class="features-icon">
+                            <img src="{% static 'images/contact-info-03.png' %}" alt="">
+                        </div>
+                        <div class="features-content">
+                            <h4>Français (Nuit)</h4>
+                            <p>Notre réunion sur Zoom. Lorsqu'il est 23:00 (GMT-4) Montreal, Quebec, Canada</p>                               
+                            <a href="https://us02web.zoom.us/j/7491822082?pwd=dDAvTnFUL1JYRndqeTgyci80T1BJUT09
+                            " class="text-button-icon">
+                                Cliquez Ici <i class="fa fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="subscribe">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <div class="section-heading">
+                        <h6>We have a special moment of prayer and worship taking place on March 31st, 2024</h6>
+                        <h2>Don’t miss this chance!</h2>
+                    </div>
+                    <div class="subscribe-content">
+                        <script>function countdown() {
+                            const targetDate = new Date("2024-03-31 10:00:00 GMT-0500");
+                            const now = new Date();
+                          
+                            const difference = targetDate - now;
+                          
+                            let days = Math.floor(difference / (1000 * 60 * 60 * 24));
+                            let hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                            let minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+                            let seconds = Math.floor((difference % (1000 * 60)) / 1000);
+                          
+                            days = days.toString().padStart(2, "0");
+                            hours = hours.toString().padStart(2, "0");
+                            minutes = minutes.toString().padStart(2, "0");
+                            seconds = seconds.toString().padStart(2, "0");
+                          
+                            document.getElementById("days").textContent = days;
+                            document.getElementById("hours").textContent = hours;
+                            document.getElementById("minutes").textContent = minutes;
+                            document.getElementById("seconds").textContent = seconds;
+                          }
+                          
+                          setInterval(countdown, 1000);</script>
+                        
+                        <div class="subscribe-form">
+  <div class="countdown" style="display: inline-block;
+  justify-content: center;
+  margin-top: 50px;
+  font-family: 'Staatliches', cursive;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    color: aliceblue;">
+    <div class="square" style="display: inline-block;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 10px;"><h3 style="text-align: center;">starts in:</h3><h5>
+      <span id="days">00</span>
+      <span class="label">Days</span>
+   
+      <span id="hours">00</span>
+      <span class="label">Hours</span>
+
+      <span id="minutes">00</span>
+      <span class="label">Minutes</span>
+    
+      <span id="seconds">00</span>
+      <span class="label">Seconds</span></h5>
+    </div>
+  </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% if user.is_authenticated %}
+    <section class="section" id="projects">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="section-heading">
+                        <h6>Languages</h6>
+                        <h2>Holy Bible</h2>
+                    </div>
+                    <div class="filters">
+                        <ul>
+                            <li class="active" data-filter="*">All</li>
+                            <li data-filter=".des">English</li>
+                            <li data-filter=".dev">French</li>
+                            <li data-filter=".gra">Swahili - Agano Jipya</li>
+                            <li data-filter=".tsh">Lingala</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-9">
+                    <div class="filters-content">
+                        <div class="row grid">
+                            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 all des">
+                                <div class="item">
+                                    <a href="https://download.sabda.org/mobile/pdf/NKJV.pdf" target="_blank"><img
+                                            src="{% static 'images/project-big-item-01.jpg' %}"
+                                            style="width: 100%; height: 310px; border-radius: 0px 30px 30px 0px;"
+                                            alt=""></a>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 all dev">
+                                <div class="item">
+                                    <a href="https://levigilant.com/Bible_Segond_1880_virtuelle/Bible_Segond_1880.pdf"
+                                        target="_blank"><img src="{% static 'images/project-big-item-02.jpg' %}"
+                                            style="width: 100%; height: 310px; border-radius: 0px 30px 30px 0px;"
+                                            alt=""></a>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 all gra">
+                                <div class="item">
+                                    <a href="https://m.biblestudyguide.org/ebooks/bibles/sw.pdf" target="_blank"><img
+                                            src="{% static 'images/project-big-item-03.jpg' %}"
+                                            style="width: 100%; height: 310px; border-radius: 0px 30px 30px 0px;"
+                                            alt=""></a>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 all tsh">
+                                <div class="item">
+                                    <a href="https://download-a.akamaihd.net/files/media_publication/45/bi12_LI.pdf"><img
+                                            src="{% static 'images/project-big-item-04.jpg' %}"
+                                            style="width: 100%; height: 310px; border-radius: 0px 30px 30px 0px;"
+                                            alt=""></a>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 all dev">
+                                <div class="item">
+                                    <a href="https://www.onelittleangel.com/telecharger/Bible-Darby.pdf"
+                                        target="_blank"><img src="{% static 'images/project-big-item-05.jpg' %}"
+                                            style="width: 100%; height: 310px; border-radius: 0px 30px 30px 0px; border: solid 1px brown;"
+                                            alt=""></a>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 all des">
+                                <div class="item">
+                                    <a href="https://www.wordfm.org/wp-content/uploads/2019/07/whole_bible_niv1984.pdf"
+                                        target="_blank"><img src="{% static 'images/project-big-item-06.jpg' %}"
+                                            style="width: 100%; height: 310px; border-radius: 0px 30px 30px 0px;"
+                                            alt=""></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    {% else %}
+    <h3 style="text-align: center; padding: 20px; background-color: rgb(255, 0, 43); margin-top: 50px; color: aliceblue;">You must <a href="signin">Sign In</a> to be able to read the Bible</h3>
+    {% endif %}
+
+    <section class="section" id="testimonials">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-heading">
+                        <h6>Ministries</h6>
+                        <h2>Preachers and Interpreters</h2>
+                    </div>
+                </div>
+                <div class="col-lg-12 col-md-12 col-sm-12 mobile-bottom-fix-big"
+                    data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
+                    <div class="owl-carousel owl-theme">
+                        <div class="item author-item">
+                            <div class="member-thumb">
+                                <img src="{% static 'images/pbasinga1.jpg' %}" alt="Pastr Basinga" style="height: 395px;">
+                                <div class="hover-effect">
+                                    <div class="hover-content">
+                                        <ul>
+                                            <li><a href="https://www.facebook.com/alain.nzinga"><i class="fa fa-facebook"></i></a></li>
+                                            <a href="https://wa.me/14383046343?text=I%20want%20you%20to%20pray%20la%20for%20me."><i
+                                                class="fab fa-whatsapp fa-1x" style="color:green; background-color: aliceblue; padding: 10px; border-radius: 100%;"></i></a>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <h4>Alain Nzinga</h4>
+                            <span>Pastor</span>
+                        </div>
+                        <div class="item author-item">
+                            <div class="member-thumb">
+                                <img src="{% static 'images/member-item-04.j' %}" alt="Pastr Deo">
+                                <div class="hover-effect">
+                                    <div class="hover-content">
+                                        <ul>
+                                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-rss"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <h4>Pastor Deo</h4>
+                            <span>Preacher</span>
+                        </div>
+                        <div class="item author-item">
+                            <div class="member-thumb">
+                                <img src="{% static 'images/member-item-02.j' %}" alt="Past Blaise">
+                                <div class="hover-effect">
+                                    <div class="hover-content">
+                                        <ul>
+                                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-rss"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <h4>Pastor Blaise</h4>
+                            <span>Preacher</span>
+                        </div>
+                        <div class="item author-item">
+                            <div class="member-thumb">
+                                <img src="{% static 'images/member-item-05' %}" alt="Past. Papy">
+                                <div class="hover-effect">
+                                    <div class="hover-content">
+                                        <ul>
+                                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-rss"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <h4>Pastor Papy</h4>
+                            <span>Preacher</span>
+                        </div>
+                        <div class="item author-item">
+                            <div class="member-thumb">
+                                <img src="{% static 'images/member-item-03' %}" alt="Léonie">
+                                <div class="hover-effect">
+                                    <div class="hover-content">
+                                        <ul>
+                                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-rss"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <h4>Léonie</h4>
+                            <span>Interpreter</span>
+                        </div>
+
+                        <div class="item author-item">
+                            <div class="member-thumb">
+                                <img src="{% static 'images/IEnockB.jpg' %}" alt="Enock Balthazar" style="height: 395px;">
+                                <div class="hover-effect">
+                                    <div class="hover-content">
+                                        <ul>
+                                            <a href="https://wa.me/5491121612404?text=I%20want%20you%20to%20pray%20la%20for%20me."><i
+                                                class="fab fa-whatsapp fa-1x" style="color:green; background-color: aliceblue; padding: 10px; border-radius: 100%;"></i></a>
+                                        </ul>
+                                    </div>
+                                </div> 
+                            </div>
+                            <h4>Enock Balthazar</h4>
+                            <span>Interpreter</span>
+                        </div>
+
+                        <div class="item author-item">
+                            <div class="member-thumb">
+                                <img src="{% static 'images/member-item-04' %}" alt="Agbassa Jino">
+                                <div class="hover-effect">
+                                    <div class="hover-content">
+                                        <ul>
+                                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-rss"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <h4>Agbassa Jino</h4>
+                            <span>Interpreter</span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="contact-us">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-xs-12">
+                    <div class="left-text-content">
+                        <div class="section-heading">
+                            <h6>Contact Us</h6>
+                            <h2>Feel free to keep in touch with us!</h2>
+                        </div>
+                        <ul class="contact-info">
+                            <li><img src="{% static 'images/contact-info-01.png' %}" alt="">+1 (438) 304-6343</li>
+                            <li><img src="{% static 'images/contact-info-02.png' %}" alt="">pastaalainusa@gmail.com</li>
+                            <li><img src="{% static 'images/contact-info-03.png' %}" alt=""><a
+                                    href="indexa">www.lebonberger.online</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-8 col-xs-12">
+                    <div class="contact-form">
+                        <form id="contact" action="indexa/lettera" method="post">
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="col-md-6 col-sm-12">
+                                    <fieldset>
+                                        <input name="name" type="text" id="name" placeholder="Your Name *" required="">
+                                    </fieldset>
+                                </div>
+                                <div class="col-md-6 col-sm-12">
+                                    <fieldset>
+                                        <input name="phone" type="text" id="phone" placeholder="Your Phone" required="">
+                                    </fieldset>
+                                </div>
+                                <div class="col-md-6 col-sm-12">
+                                    <fieldset>
+                                        <input name="email" type="email" id="email" placeholder="Your Email *"
+                                            required="">
+                                    </fieldset>
+                                </div>
+                                <div class="col-md-6 col-sm-12">
+                                    <fieldset>
+                                        <input name="subject" type="text" id="subject" placeholder="Subject">
+                                    </fieldset>
+                                </div>
+                                <div class="col-lg-12">
+                                    <fieldset>
+                                        <textarea name="message" rows="6" id="message" placeholder="Message"
+                                            required=""></textarea>
+                                    </fieldset>
+                                </div>
+                                <div class="col-lg-12">
+                                    <fieldset>
+                                        <button type="submit" id="form-submit" class="main-button-icon">Send Message Now
+                                            <i class="fa fa-arrow-right"></i></button>
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-xs-12">
+                    <div class="left-text-content">
+                        <p><a href="indexa">Jesus Christ The Good Shepherd Tabernacle</a></p>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-xs-12">
+                    <div class="right-text-content">
+                        <ul class="social-icons">
+                            <li>
+                                <p>Follow Us</p>
+                            </li>
+                            <li><a rel="nofollow" href="https://www.facebook.com/alain.nzinga"><i class="fa fa-facebook"></i></a>
+                            </li>
+                            <li>
+                                <a href="https://wa.me/14383046343?text=I%20want%20you%20to%20pray%20la%20for%20me."><i
+                                    class="fab fa-whatsapp fa-1x" style="color:green; background-color: aliceblue; padding: 10px; border-radius: 100%;"></i></a>
+                            </li>
+                            <li><a rel="nofollow" href="https://us02web.zoom.us/j/7491822082?pwd=dDAvTnFUL1JYRndqeTgyci80T1BJUT09" style="font-size:x-small;">Zoom</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- jQuery -->
+    <script src="{% static 'js/jquery-2.1.0.min.js' %}"></script>
+
+    <!-- Bootstrap -->
+    <script src="{% static 'js/popper.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+    <!-- Plugins -->
+    <script src="{% static 'js/owl-carousel.js' %}"></script>
+    <script src="{% static 'js/scrollreveal.min.js' %}"></script>
+    <script src="{% static 'js/waypoints.min.js' %}"></script>
+    <script src="{% static 'js/jquery.counterup.min.js' %}"></script>
+    <script src="{% static 'js/imgfix.min.js' %}"></script>
+    <script src="{% static 'js/slick.js' %}"></script>
+    <script src="{% static 'js/lightbox.js' %}"></script>
+    <script src="{% static 'js/isotope.js' %}"></script>
+
+    <!-- Global Init -->
+    <script src="{% static 'js/custom.js' %}"></script>
+
+    <script>
+
+        $(function () {
+            var selectedClass = "";
+            $("p").click(function () {
+                selectedClass = $(this).attr("data-rel");
+                $("#portfolio").fadeTo(50, 0.1);
+                $("#portfolio div").not("." + selectedClass).fadeOut();
+                setTimeout(function () {
+                    $("." + selectedClass).fadeIn();
+                    $("#portfolio").fadeTo(50, 1);
+                }, 500);
+
+            });
+        });
+
+    </script>
+
+</body>
+
+</html>

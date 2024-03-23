@@ -1,0 +1,190 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register</title>
+  <link rel="stylesheet" href="{% static 'css/register.css' %}">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link href="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <style>
+    .animated-text1 h1 {
+      animation-duration: 10s example;
+      animation-fill-mode: both;
+    }
+
+    .text1a {
+      animation-name: example;
+      animation-delay: 0s;
+    }
+
+    .text2a {
+      animation-name: example;
+      animation-delay: 10s;
+    }
+
+
+    @keyframes example {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+    #PBasingar {
+    -webkit-animation: bgcolorchange 4s infinite;
+    animation: 2s infinite bgcolorchange;
+    }
+    @keyframes bgcolorchange {
+    0% {
+      background-color: rgb(255, 224, 253);
+    }
+    18% {
+      background-color: rgb(238, 175, 219);
+    }
+    36% {
+      background-color: rgb(250, 135, 215);
+    }
+    54% {
+      background-color: rgb(232, 146, 240);
+    }
+    72% {
+        background-color: rgb(239, 184, 247);
+      }
+      90% {
+        background-color: rgb(235, 183, 222);
+      }
+    
+    100% {
+      background-color: rgb(255, 255, 255);
+    }
+    }
+  </style>
+  <div class="d-none d-lg-block" class="animated-text1" style="margin-top: 0px; padding-top: 10px; padding-bottom: 10px;-webkit-animation: bgcolorchange 4s infinite;
+  animation: 2s infinite bgcolorchange;">
+    <div id="disap">
+      <h1 class="text1a" style="text-align: center; color: aliceblue; animation-duration: 10s example;
+  animation-fill-mode: both;">&#9962; Tabernacle Jésus Christ Le Bon Berger</h1>
+    </div>
+    <h1 class="text2a" style="text-align: center; color: aliceblue; animation-duration: 10s example;
+                animation-fill-mode: both;">&#9962; Jesus Christ The Good Shepherd Tabernacle</h1>
+  </div>
+  <div class="d-none d-lg-block"
+    style="float: right; padding: 50px 20px 50px 20px; background-color: aliceblue; border-radius: 40px; margin: 50px 0px 80px 0px;">
+    <div>
+      <h3 style="text-align: center;">Inscription | Registration</h3>
+    </div>
+    {% for message in messages %}
+    <h5 style="color: red; text-align: center;">{{message}}</h5>
+    {% endfor %}
+
+    <form method="POST" action="register" style="text-align: center;">
+      {% csrf_token %}
+      <label for="username"><b>Username:</b></label>
+      <br>
+      <input style="padding: 5px; text-align: center;" id="username" type="text" placeholder="Nom d'utilisateur"
+        name="username" required>
+      <br>
+      <br>
+      <label for="email"><b>Email:</b></label>
+      <br>
+      <input style="padding: 5px; text-align: center;" type="email" id="email" placeholder="Votre e-mail" name="email"
+        required>
+      <br>
+      <br>
+      <label for="password"><b>Password:</b></label>
+      <br>
+      <input style="padding: 5px; text-align: center;" id="password" type="password" placeholder="Mot de passe"
+        name="password" required>
+      <br>
+      <br>
+      <label for="password"><b>Confirm Password:</b></label>
+      <br>
+      <input style="padding: 5px; text-align: center;" id="password" type="password"
+        placeholder="Confirmez le mot de passe" name="password2" required>
+      <br>
+      <br>
+      <input type="submit" value="S'enregistrer | Submit"
+        style="background-color: rgb(199, 206, 206); padding: 5px 10px 5px 10px; border-radius: 30px;">
+      <br>
+      <br>
+    </form>
+    <a href="signin">
+      <p style="text-align: center;">Avoir un compte déjà | Already have an account</p>
+    </a>
+  </div>
+
+  <div class="d-lg-none" class="animated-text1"
+    style="border-radius: 30px 30px 0px 0px; margin-top: 220px; padding-top: 20px; padding-bottom: 20px; margin-bottom: 0px; -webkit-animation: bgcolorchange 4s infinite;
+    animation: 2s infinite bgcolorchange;">
+    <div id="disap">
+      <h1 class="text1a" style="text-align: center; color: aliceblue; animation-duration: 10s example;
+  animation-fill-mode: both;">&#9962; Tabernacle Jésus Christ Le Bon Berger</h1>
+    </div>
+    <h1 class="text2a" style="text-align: center; color: aliceblue; animation-duration: 10s example;
+                animation-fill-mode: both;">&#9962; Jesus Christ The Good Shepherd Tabernacle</h1>
+  </div>
+  <div class="d-lg-none"
+    style="float: center; background-color: aliceblue; border-radius: 0px 0px 40px 40px; margin: 0px">
+    <div>
+      <h3 style="text-align: center;">Inscription | Registration</h3>
+    </div>
+    {% for message in messages %}
+    <h5 style="color: red; text-align: center;">{{message}}</h5>
+    {% endfor %}
+
+    <form method="POST" action="register" style="text-align: center;">
+      {% csrf_token %}
+      <label for="username"><b>Username:</b></label>
+      <br>
+      <input style="padding: 3px; text-align: center;" id="username" type="text" placeholder="Nom d'utilisateur"
+        name="username" required>
+      <br>
+      <br>
+      <label for="email"><b>Email:</b></label>
+      <br>
+      <input style="padding: 3px; text-align: center;" type="email" id="email" placeholder="Votre e-mail" name="email"
+        required>
+      <br>
+      <br>
+      <label for="password"><b>Password:</b></label>
+      <br>
+      <input style="padding: 3px; text-align: center;" id="password" type="password" placeholder="Mot de passe"
+        name="password" required>
+      <br>
+      <br>
+      <label for="password"><b>Confirm Password:</b></label>
+      <br>
+      <input style="padding: 3px; text-align: center;" id="password" type="password"
+        placeholder="Confirmez le mot de passe" name="password2" required>
+      <br>
+      <br>
+      <input type="submit" value="S'enregistrer | Submit"
+        style="background-color: rgb(199, 206, 206); padding: 5px 10px 5px 10px; border-radius: 30px;">
+      <br>
+      <br>
+    </form>
+    <a href="signin">
+      <p style="text-align: center;">Avoir un compte déjà | Already have an account</p>
+    </a>
+  </div>
+  <script type="text/javascript">
+    setTimeout(() => {
+      const sometext = document.getElementById('disap')
+      sometext.style.display = 'none';
+    }, 10000);
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

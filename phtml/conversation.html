@@ -1,0 +1,122 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{% static 'css/conversation.css' %}">
+<title>Conversation</title>
+<style>
+
+</style>
+<script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+</head>
+<body>
+  {% if user.is_authenticated %}
+  <div>
+    <h1 style="text-align: left;">{{user.username}}&#x1F4D6;</h1>   
+    <h4 style="text-align: right;">-{{conversation}}</h4>
+</div>
+
+<div id="display">
+  
+  
+  </div>
+
+
+<script>
+$(document).ready(function(){
+
+setInterval(function(){
+    $.ajax({
+        type: 'GET',
+        url : "/getUtalks/{{conversation}}/",
+        success: function(response){
+            console.log(response);
+            $("#display").empty();
+            for (var key in response.utalks)
+            {
+                var temp="<div class='container darker'><b>"+response.utalks[key].user+"</b><p>"+response.utalks[key].value+"</p><span class='time-left'>"+response.utalks[key].date+"</span></div>";
+                $("#display").append(temp);
+            }
+        },
+        error: function(response){
+            alert('An error occured')
+        }
+    });
+},1000);
+})
+</script>
+
+
+<div class="container">
+    <style>
+    input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    }
+
+    input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    }
+
+    input[type=submit]:hover {
+    background-color: #45a049;
+    }
+
+    div {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    }
+    </style>
+
+    <form id="post-form" style="text-align: center;">
+        {% csrf_token %}
+        <input type="hidden" name="username" id="username" value="{{user.username}}"/>
+        <input type="hidden" name="conversation_id" id="conversation_id" value="{{conversation_details.id}}"/>
+        <input type="text" name="utalk" id="utalk" />
+        <input type="submit" value="Partager &#10073; Share">
+    </form>
+    <a href="/" style="text-decoration: none;"><h4>&#10558;Page d'acceuil &#10074;Back to Homepage</h4></a>
+
+</div>
+{% else %}
+<h1 style="text-align: center; padding: 20px; background-color: rgb(255, 0, 43); margin-top: 50px; color: aliceblue;">You must <a href="/">Sign In</a> in to have access to this page.</h1>
+<h1 style="text-align: center; padding: 20px; background-color: rgb(255, 0, 43); margin-top: 50px; color: aliceblue;">Vous devez vous <a href="/">connecter</a> pour avoir accès à cette page.</h1>
+{% endif %}
+</body>
+
+<script type="text/javascript">
+  $(document).on('submit','#post-form',function(e){
+    e.preventDefault();
+
+    $.ajax({
+      type:'POST',
+      url:'/share',
+      data:{
+          username:$('#username').val(),
+          conversation_id:$('#conversation_id').val(),
+          utalk:$('#utalk').val(),
+        csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val(),
+      },
+      success: function(data){
+         //alert(data)
+      }
+    });
+    document.getElementById('utalk').value = ''
+  });
+</script>
+
+</html>
